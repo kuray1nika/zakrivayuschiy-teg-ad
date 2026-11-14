@@ -4,6 +4,9 @@ const iconButtonArray = document.querySelectorAll('.card__icon-button');
 const saveButton = document.querySelector('.save-button');
 const saveDialog = document.querySelector('#save-dialog');
 
+const dialogForm = document.querySelector('.dialog__form');
+const dialogButton = document.querySelector('.dialog__button');
+
 iconButtonArray.forEach((iconButton, index) => {
   iconButton.onclick = () =>
     toggleIsLiked(likeHeartArray[index], likeButtonArray[index]);
@@ -14,8 +17,22 @@ likeButtonArray.forEach((button, index) => {
 });
 
 if (saveButton && saveDialog) {
-  saveButton.addEventListener('click', () => {
+  saveButton.addEventListener('click', (event) => {
+    event.preventDefault();
     saveDialog.showModal();
+  });
+}
+
+if (dialogButton && saveDialog) {
+  dialogButton.addEventListener('click', () => {
+    saveDialog.close();
+  });
+}
+
+if (dialogForm && saveDialog) {
+  dialogForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    saveDialog.close();
   });
 }
 
