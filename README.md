@@ -1,1 +1,1 @@
-https://kuray1nika.github.io/zakrivayuschiy-teg-ad/
+https://github.com/kuray1nika/zakrivayuschiy-teg-ad
